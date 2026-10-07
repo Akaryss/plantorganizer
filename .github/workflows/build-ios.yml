@@ -27,7 +27,7 @@ jobs:
         run: |
           if [ ! -d "ios" ]; then
             echo "Генерация iOS файлов проекта..."
-            flutter create --platforms=ios --org com.antigravity.plantorganizer .
+            flutter create --platforms=ios --org com.antigravity.plantorganizer --project-name plant_care_organizer --no-pub .
           fi
 
       - name: 📦 Установка зависимостей pubspec.yaml

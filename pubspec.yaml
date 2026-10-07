@@ -20,7 +20,7 @@ dependencies:
   path_provider: ^2.1.2
 
   # Вспомогательное хранилище справочников: Realm SDK (семейства, удобрения)
-  realm: ^2.0.0
+  realm: ^1.6.0
 
   # Сетевой слой REST API к Perenual
   dio: ^5.4.1
