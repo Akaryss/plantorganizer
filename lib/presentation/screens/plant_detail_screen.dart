@@ -119,7 +119,7 @@ class _PlantDetailView extends StatelessWidget {
                                   plant.scientificName,
                                   style: theme.textTheme.titleMedium?.copyWith(
                                     fontStyle: FontStyle.italic,
-                                    color: Colors.emerald,
+                                    color: const Color(0xFF059669),
                                     fontWeight: FontWeight.w600,
                                   ),
                                 ),

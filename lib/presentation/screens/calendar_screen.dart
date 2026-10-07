@@ -117,7 +117,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
                                       margin: const EdgeInsets.only(top: 2),
                                       decoration: BoxDecoration(
                                         shape: BoxShape.circle,
-                                        color: isSelected ? Colors.white : Colors.emerald,
+                                        color: isSelected ? Colors.white : const Color(0xFF059669),
                                       ),
                                     ),
                                 ],

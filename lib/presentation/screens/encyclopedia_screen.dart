@@ -52,7 +52,7 @@ class EncyclopediaScreen extends StatelessWidget {
                                   ),
                                   Text(
                                     fam.latinName,
-                                    style: const TextStyle(fontStyle: FontStyle.italic, color: Colors.emerald),
+                                    style: const TextStyle(fontStyle: FontStyle.italic, color: Color(0xFF059669)),
                                   ),
                                 ],
                               ),

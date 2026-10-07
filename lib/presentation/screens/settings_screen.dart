@@ -32,7 +32,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 children: [
                   Row(
                     children: [
-                      const Icon(Icons.notifications_active, color: Colors.emerald),
+                      const Icon(Icons.notifications_active, color: Color(0xFF059669)),
                       const SizedBox(width: 8),
                       Text(
                         'Запланированные уведомления (${triggers.length})',

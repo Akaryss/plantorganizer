@@ -84,7 +84,7 @@ class _ScannerViewState extends State<_ScannerView> {
                   decoration: BoxDecoration(
                     color: Colors.black87,
                     borderRadius: BorderRadius.circular(18),
-                    border: Border.all(color: Colors.emerald, width: 2),
+                    border: Border.all(color: const Color(0xFF059669), width: 2),
                   ),
                   child: Stack(
                     alignment: Alignment.center,
@@ -92,7 +92,7 @@ class _ScannerViewState extends State<_ScannerView> {
                       Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          const Icon(Icons.qr_code_scanner, size: 56, color: Colors.emerald),
+                          const Icon(Icons.qr_code_scanner, size: 56, color: Color(0xFF059669)),
                           const SizedBox(height: 8),
                           const Text(
                             'Наведите камеру на этикетку растения',
@@ -111,12 +111,12 @@ class _ScannerViewState extends State<_ScannerView> {
                         child: Container(
                           padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                           decoration: BoxDecoration(
-                            color: Colors.emerald.withOpacity(0.3),
+                            color: const Color(0xFF059669).withOpacity(0.3),
                             borderRadius: BorderRadius.circular(12),
                           ),
                           child: const Text(
                             '● Mock режим тестирования активен',
-                            style: TextStyle(color: Colors.emeraldAccent, fontSize: 11),
+                            style: TextStyle(color: Color(0xFF34D399), fontSize: 11),
                           ),
                         ),
                       ),
