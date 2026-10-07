@@ -1,0 +1,6 @@
+{
+  "name": "Plant Care Organizer",
+  "description": "Элегантный органайзер домашних растений: интерактивный календарь процедур, автоматический расчет полива, распознавание ценников и журнал ухода",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

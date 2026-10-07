@@ -1,0 +1,53 @@
+name: Build iOS IPA (Variant 7)
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  build-ios:
+    name: Build Native iOS App (.ipa)
+    runs-on: macos-14
+
+    steps:
+      - name: 📥 Клонирование репозитория
+        uses: actions/checkout@v4
+
+      - name: 📱 Настройка Flutter SDK
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.24.x'
+          channel: 'stable'
+          cache: true
+
+      - name: ⚙️ Создание iOS платформенной обвязки (при необходимости)
+        run: |
+          if [ ! -d "ios" ]; then
+            echo "Генерация iOS файлов проекта..."
+            flutter create --platforms=ios --org com.antigravity.plantorganizer .
+          fi
+
+      - name: 📦 Установка зависимостей pubspec.yaml
+        run: flutter pub get
+
+      - name: 🔨 Сборка нативного iOS бандла (Release)
+        run: |
+          flutter build ios --no-codesign --release
+
+      - name: 📦 Упаковка в установочный IPA (Payload)
+        run: |
+          cd build/ios/iphoneos
+          mkdir -p Payload
+          cp -r Runner.app Payload/
+          zip -r -9 PlantCareOrganizer.ipa Payload
+          cd ../../..
+
+      - name: 🚀 Выгрузка готового IPA артефакта
+        uses: actions/upload-artifact@v4
+        with:
+          name: PlantCareOrganizer-iOS-IPA
+          path: build/ios/iphoneos/PlantCareOrganizer.ipa
+          retention-days: 14
